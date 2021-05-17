@@ -1,0 +1,19 @@
+version: "3"
+services:
+  reverse-proxy:
+    build:
+      context: .
+    image: jiewwantan/udagram-microservice:reverse-proxy
+  udagram-restapi-feed:
+    build:
+      context: ../../udagram-restapi-feed
+    image: jiewwantan/udagram-microservice:feed
+  udagram-restapi-user:
+    build:
+      context: ../../udagram-restapi-user
+    image: jiewwantan/udagram-microservice:user
+  udagram-frontend:
+    build:
+      context: ../../udagram-frontend
+    image: jiewwantan/udagram-microservice:frontend
+  
