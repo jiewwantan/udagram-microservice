@@ -7,7 +7,7 @@ data:
   JWT_SECRET: "sxkmdiscnkdalan"
   POSTGRES_DB: udagramjwtandev
   POSTGRES_HOST: udagramjwtandev.c7uktt2diosc.ap-southeast-1.rds.amazonaws.com
-  URL: http://af0e5cc57bf024398a6c9a7d7f9e26d6-374303255.ap-southeast-1.elb.amazonaws.com:8100
+  URL: http://a10a7199eb5fb46c9b1553c45982fa38-1490866700.ap-southeast-1.elb.amazonaws.com:8100
 metadata:
   name: env-config
 
