@@ -1,0 +1,153 @@
+(base) JiewWans-MBP:docker jiewwantan1$ docker-compose -f docker-compose-build.yaml build --parallel
+WARNING: Flag '--parallel' is ignored when building with COMPOSE_DOCKER_CLI_BUILD=1
+Building reverse-proxy        ... 
+Building udagram-restapi-feed ... 
+Building udagram-restapi-user ... 
+Building udagram-frontend     ... 
+Building udagram-restapi-feed
+Building udagram-restapi-user
+Building reverse-proxy
+Building udagram-frontend
+[+] Building 0.0s (0/1)                                                                         
+[+] Building 0.0s (0/1)                                                                         
+[+] Building 0.2s (1/1)                                                                         
+ => [internal] load build definition from Dockerfile                                       0.0s
+ => => transferring dockerfile: 37B                                                        0.0s
+[+] Building 0.2s (1/1)                                                                         
+ => [internal] load build definition from Dockerfile                                       0.0s
+[+] Building 0.3s (2/2)                                                                         
+ => [internal] load build definition from Dockerfile                                       0.0s
+ => => transferring dockerfile: 37B                                                        0.0s
+ => [internal] load .dockerignore                                                          0.0s
+[+] Building 0.3s (2/2)                                                                         
+ => [internal] load build definition from Dockerfile                                       0.0s
+[+] Building 3.6s (2/4)                                                                         
+ => [internal] load build definition from Dockerfile                                       0.0s
+ => => transferring dockerfile: 129B                                                       0.0s
+ => [internal] load .dockerignore                                                          0.0s 
+ => => transferring context: 2B                                                            0.0s 
+[+] Building 3.8s (3/4)                                                                         
+ => [internal] load metadata for docker.io/library/nginx:alpine                            3.3s 
+[+] Building 3.8s (12/12) FINISHED                                                              
+ => [internal] load build definition from Dockerfile                                       0.0s 
+ => => transferring dockerfile: 37B                                                        0.0s
+ => [internal] load .dockerignore                                                          0.0s
+ => => transferring context: 116B                                                          0.0s
+ => [internal] load metadata for docker.io/library/node:13                                 3.4s
+ => [auth] library/node:pull token for registry-1.docker.io                                0.0s
+ => [internal] load build context                                                          0.0s
+ => => transferring context: 3.63kB                                                        0.0s
+ => [1/6] FROM docker.io/library/node:13@sha256:70d4fffcab39a1f9f7161d58e674ddcc56c7f0724  0.0s
+ => CACHED [2/6] WORKDIR /usr/src/app                                                      0.0s
+ => CACHED [3/6] COPY package*.json ./                                                     0.0s
+[+] Building 3.7s (6/7)                                                                         
+ => [internal] load build definition from Dockerfile                                       0.0s
+ => => transferring dockerfile: 128B                                                       0.0s
+ => [internal] load .dockerignore                                                          0.0s
+ => => transferring context: 2B                                                            0.0s
+[+] Building 3.7s (11/11) FINISHED                                                              
+ => [internal] load build definition from Dockerfile                                       0.0s
+ => => transferring dockerfile: 37B                                                        0.0s
+ => [internal] load .dockerignore                                                          0.0s
+ => => transferring context: 116B                                                          0.0s
+ => [internal] load metadata for docker.io/library/node:13                                 3.3s
+ => [1/6] FROM docker.io/library/node:13@sha256:70d4fffcab39a1f9f7161d58e674ddcc56c7f0724  0.0s
+[+] Building 3.8s (8/8) FINISHED                                                                
+ => [internal] load build definition from Dockerfile                                       0.0s
+ => => transferring dockerfile: 128B                                                       0.0s
+ => [internal] load .dockerignore                                                          0.0s
+ => => transferring context: 2B                                                            0.0s
+ => [internal] load metadata for docker.io/library/nginx:alpine                            3.3s
+ => [auth] library/nginx:pull token for registry-1.docker.io                               0.0s
+ => [internal] load build context                                                          0.0s
+[+] Building 4.2s (6/15)                                                                        
+ => [internal] load build definition from Dockerfile                                       0.0s
+ => => transferring dockerfile: 129B                                                       0.0s
+ => [internal] load .dockerignore                                                          0.0s
+ => => transferring context: 2B                                                            0.0s
+ => [internal] load metadata for docker.io/library/nginx:alpine                            3.3s
+ => [internal] load metadata for docker.io/library/node:13                                 3.3s
+ => [1/6] FROM docker.io/library/node:13@sha256:70d4fffcab39a1f9f7161d58e674ddcc56c7f0724  0.0s
+ => [1/2] FROM docker.io/library/nginx:alpine@sha256:07ab71a2c8e4ecb19a5a5abcfb3a4f175946  0.0s
+ => [internal] load build context                                                          0.5s
+ => => transferring context: 728.28kB                                                      0.5s
+
+[+] Building 46.1s (16/16) FINISHED                                                              => [internal] load build definition from Dockerfile                                       0.0s
+ => => transferring dockerfile: 129B                                                       0.0s
+ => [internal] load .dockerignore                                                          0.0s
+ => => transferring context: 2B                                                            0.0s
+ => [internal] load metadata for docker.io/library/nginx:alpine                            3.3s  => [internal] load metadata for docker.io/library/node:13                                 3.3s
+ => [1/6] FROM docker.io/library/node:13@sha256:70d4fffcab39a1f9f7161d58e674ddcc56c7f0724  0.0s  => CACHED [1/2] FROM docker.io/library/nginx:alpine@sha256:07ab71a2c8e4ecb19a5a5abcfb3a4  0.0s
+ => [internal] load build context                                                          5.1s
+ => => transferring context: 8.14MB                                                        5.0s
+ => CACHED [2/6] WORKDIR /usr/src/app                                                      0.0s
+ => CACHED [build 3/7] COPY package*.json ./                                               0.0s
+ => CACHED [build 4/7] RUN npm ci                                                          0.0s
+ => CACHED [build 5/7] RUN npm install -g ionic                                            0.0s
+ => [build 6/7] COPY . .                                                                  19.5s
+ => [build 7/7] RUN ionic build                                                           15.7s
+ => [stage-1 2/3] COPY --from=build /usr/src/app/www /usr/share/nginx/html                 0.1s 
+ => [stage-1 3/3] COPY nginx.conf /etc/nginx/nginx.conf                                    0.0s 
+ => exporting to image                                                                     0.2s 
+ => => exporting layers                                                                    0.2s 
+ => => writing image sha256:5156c43666dc198ebb70e78536ae354471299b9a45a7dffd71edc79d7f94a  0.0s 
+ => => naming to docker.io/jiewwantan/udagram-microservice:frontend1.1                     0.0s 
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+Building udagram-frontend     ... done
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+(base) JiewWans-MBP:docker jiewwantan1$ docker-compose -f docker-compose-build.yaml push        Pushing reverse-proxy (jiewwantan/udagram-microservice:reverse-proxy1.1)...
+The push refers to repository [docker.io/jiewwantan/udagram-microservice]
+243724f6833d: Layer already exists
+4689e8eca613: Layer already exists
+3480549413ea: Layer already exists
+3c369314e003: Layer already exists
+4531e200ac8d: Layer already exists
+ed3fe3f2b59f: Layer already exists
+b2d5eeeaba3a: Layer already exists
+reverse-proxy1.1: digest: sha256:9179d8852e2757ba4eda39e87c76720693b0f7e847ebe2ce077c2defd460cc2b size: 1775
+Pushing udagram-restapi-feed (jiewwantan/udagram-microservice:feed1.1)...
+The push refers to repository [docker.io/jiewwantan/udagram-microservice]
+9dcd979d4313: Layer already exists
+e51f7b12c9ce: Layer already exists
+1c72c0b84517: Layer already exists
+6a32ccf33b87: Layer already exists
+f2612d519866: Layer already exists
+ed09928f5a32: Layer already exists
+ee50c22fdf6c: Layer already exists
+d8183b2c9c73: Layer already exists
+5aea01ea0a0f: Layer already exists
+05f4935ad90a: Layer already exists
+c96f2308ab16: Layer already exists
+38c2f9ead82d: Layer already exists
+0dabcc98eeef: Layer already exists
+6885f9305c0a: Layer already exists
+feed1.1: digest: sha256:80ba37c21637e859dde5e6944682585df7abe8eb03f7ef3b41b25bdde4b5e958 size: 3262
+Pushing udagram-restapi-user (jiewwantan/udagram-microservice:user1.1)...
+The push refers to repository [docker.io/jiewwantan/udagram-microservice]
+4ccb86748579: Layer already exists
+bca130669883: Layer already exists
+6f7da77f6977: Layer already exists
+135e3298d1cc: Layer already exists
+f2612d519866: Layer already exists
+ed09928f5a32: Layer already exists
+ee50c22fdf6c: Layer already exists
+d8183b2c9c73: Layer already exists
+5aea01ea0a0f: Layer already exists
+05f4935ad90a: Layer already exists
+c96f2308ab16: Layer already exists
+38c2f9ead82d: Layer already exists
+0dabcc98eeef: Layer already exists
+6885f9305c0a: Layer already exists
+user1.1: digest: sha256:51abd9fc26554b4f0341b79f8aa5b14f23ea4f47043ea0f7abd20ee9a5474289 size: 3262
+Pushing udagram-frontend (jiewwantan/udagram-microservice:frontend1.1)...
+The push refers to repository [docker.io/jiewwantan/udagram-microservice]
+158169e10139: Pushed
+686fa1b4ff0a: Pushed
+4689e8eca613: Layer already exists
+3480549413ea: Layer already exists
+3c369314e003: Layer already exists
+4531e200ac8d: Layer already exists
+ed3fe3f2b59f: Layer already exists
+b2d5eeeaba3a: Layer already exists
+frontend1.1: digest: sha256:8a04ce357c1cf7a610430d38a415f5c92bbefed7a247f317e1a02adb51aeb901 size: 1986
