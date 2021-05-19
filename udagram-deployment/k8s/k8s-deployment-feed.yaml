@@ -5,7 +5,7 @@ metadata:
     service: udagram-restapi-feed
   name: udagram-restapi-feed
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       service: udagram-restapi-feed
@@ -15,7 +15,7 @@ spec:
         service: udagram-restapi-feed
     spec:
       containers:
-      - image: jiewwantan/udagram-microservice:feed
+      - image: jiewwantan/udagram-microservice:feed1.1
         name: udagram-restapi-feed
         imagePullPolicy: Always
         resources:

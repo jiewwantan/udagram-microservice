@@ -15,7 +15,7 @@ spec:
         service: reverse-proxy
     spec:
       containers:
-      - image: jiewwantan/udagram-microservice:reverse-proxy
+      - image: jiewwantan/udagram-microservice:reverse-proxy1.1
         name: reverse-proxy
         imagePullPolicy: Always
         resources:

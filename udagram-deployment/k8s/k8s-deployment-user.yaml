@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: udagram-restapi-user
+    service: udagram-restapi-user1.1
   name: udagram-restapi-user
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       service: udagram-restapi-user
@@ -15,7 +15,7 @@ spec:
         service: udagram-restapi-user
     spec:
       containers:
-      - image: jiewwantan/udagram-microservice:user
+      - image: jiewwantan/udagram-microservice:user1.1
         name: udagram-restapi-user
         imagePullPolicy: Always
         resources:
