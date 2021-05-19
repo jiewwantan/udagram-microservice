@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverse-proxy:
-    image: jiewwantan/udagram-microservice:reverse-proxy
+    image: jiewwantan/udagram-microservice:reverse-proxy1.1
     ports:
       - 8080:8080
     restart: always
@@ -9,7 +9,7 @@ services:
       - udagram-restapi-user
       - udagram-restapi-feed
   udagram-restapi-feed:
-    image:feed
+    image: jiewwantan/udagram-microservice:feed1.1
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -23,7 +23,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   udagram-restapi-user:
-    image: jiewwantan/udagram-microservice:user
+    image: jiewwantan/udagram-microservice:user1.1
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -38,7 +38,7 @@ services:
       URL: "http://localhost:8100"
  
   udagram-frontend:
-    image: jiewwantan/udagram-microservice:frontend
+    image: jiewwantan/udagram-microservice:frontend1.1
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
@@ -49,7 +49,7 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
-      production: false
+      production: 'false'
       appName: 'Udagram'
       apiHost: $APIHOST
     ports:
